@@ -21,5 +21,9 @@ Aceito ideias e sugestões do que melhorar no código ou do que tenho estudar pa
 
 - Adicionar o cadastro de empresas e listar eles junto com os funcionários.
 
+- Adicionar validação do formulário.
+
 - Ter ideias de funções novas.
+
+
 
