@@ -1,0 +1,19 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "App"
+        },
+        "files": [
+            "config.php"
+        ]
+    },
+    "name": "passivo/composer-php",
+    "description": "Composer do meu projeto",
+    "authors": [
+        {
+            "name": "Yuri Ferreira",
+            "email": "yurihmello17@gmail.com"
+        }
+    ],
+    "require": {}
+}

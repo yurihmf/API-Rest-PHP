@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passivo</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="singup">
+                <h1>Seja bem-vindo!</h1>
+                <p>Cadastre sua empresa e funcionários aqui.</p>
+
+                <form>
+                    <div class="input-field">
+                        <label for="nome">Nome</label>
+                        <input name="nome" id="nome" type="text">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="email">E-mail</label>
+                        <input name="email" id="email" type="text">
+                    </div>
+
+                    <div class="input-field">
+                        <label for="id_empresa">ID da empresa</label>
+                        <input name="id_empresa" id="id_empresa" type="text">
+                    </div>
+                    <div class="btn-field">
+                        <button id="bt-post" class="btn-green" type="button">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="list">
+                <h3>Tabela com funcionários cadastradas</h3>
+                <button id="bt-read" class="btn-green" type="button">Exibir empresas</button>
+                <table id="table" class="table">
+                    <thead>
+                        <tr>
+                            <th>ID do funcionário</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>ID da empresa</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

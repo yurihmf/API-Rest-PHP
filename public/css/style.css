@@ -1,0 +1,171 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgb(242, 183, 5);
+  background: linear-gradient(
+    122deg,
+    rgba(242, 183, 5, 1) 21%,
+    rgba(242, 223, 5, 1) 85%
+  );
+}
+
+.container {
+  width: 80%;
+  height: 70vh;
+
+  padding: 25px;
+
+  background-color: white;
+
+  font-family: "Nunito", sans-serif;
+
+  border-radius: 50px;
+
+  display: flex;
+}
+
+.singup {
+  width: 50%;
+  border-right: 1px solid rgb(150, 150, 150);
+}
+
+.singup h1 {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.singup p {
+  margin-top: 0;
+}
+
+.singup form {
+  margin-top: 35px;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+
+  width: 70%;
+}
+
+.input-field label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgb(46, 46, 46);
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.input-field input {
+  height: 35px;
+  border: 0;
+  background-color: rgb(243, 243, 243);
+
+  padding-left: 10px;
+
+  border-radius: 5px;
+}
+
+.singup button {
+  margin-top: 25px;
+}
+
+.btn-field {
+  display: flex;
+  width: 70%;
+}
+
+.btn-green {
+  cursor: pointer;
+  width: 30%;
+  height: 35px;
+  background: #4caf50;
+  border: 0;
+  color: white;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.btn-green button:hover {
+  background: #66bb6a;
+}
+
+.list {
+  width: 50%;
+  padding-left: 25px;
+}
+
+.list h3 {
+  font-size: 1.8rem;
+}
+
+.table {
+  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background-color: rgb(58, 58, 58);
+  color: white;
+
+  width: 100%;
+}
+
+tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+tr:nth-child(2n + 2) {
+  background-color: rgb(240, 240, 240);
+}
+
+th,
+td {
+  padding: 10px;
+  width: 20%;
+}
+
+.field-acoes {
+  display: flex;
+}
+
+.btn-table {
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  color: white;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.bt-red {
+  background-color: #f44336;
+}
+
+.bt-blue {
+  background-color: #2196f3;
+}
