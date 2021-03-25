@@ -40,6 +40,16 @@
 
             <div class="list">
                 <h3>Tabela com funcionários cadastradas</h3>
+                <div class="field-acoes">
+                    <div class="input-field">
+                        <button type="button" id="edit" class="btn-acoes bt-blue">Editar</button>
+                        <input placeholder="ID do funcionário" name="id_edit" id="id_edit" type="text">
+                    </div>
+                    <div class="input-field">
+                        <button type="button" id="delete" class="btn-acoes bt-red">Delete</button>
+                        <input placeholder="ID do funcionário" name="id_delete" id="id_delete" type="text">
+                    </div>
+                </div>
                 <button id="bt-read" class="btn-green" type="button">Exibir empresas</button>
                 <table id="table" class="table">
                     <thead>
@@ -48,7 +58,6 @@
                             <th>Nome</th>
                             <th>E-mail</th>
                             <th>ID da empresa</th>
-                            <th>Ações</th>
                         </tr>
                     </thead>
                 </table>

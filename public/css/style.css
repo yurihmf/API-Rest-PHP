@@ -151,15 +151,22 @@ td {
 
 .field-acoes {
   display: flex;
+  margin-bottom: 15px;
 }
 
-.btn-table {
+.field-acoes > .input-field{
+  width: 50%;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.btn-acoes {
   cursor: pointer;
-  width: 100%;
+  width: 30%;
   border: 0;
   color: white;
   padding: 5px;
-  margin: 0 5px;
+  margin-right: 5px;
 }
 
 .bt-red {
@@ -168,4 +175,8 @@ td {
 
 .bt-blue {
   background-color: #2196f3;
+}
+
+.field-acoes > .input-field input{
+  width: 70%;
 }
