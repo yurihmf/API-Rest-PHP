@@ -19,26 +19,23 @@ function createRow(employee){
     let tdNome = document.createElement("td")
     let tdEmail = document.createElement("td")
     let tdId_emp = document.createElement("td")
-    let tdAction = document.createElement("td")
 
     tdId_func.innerHTML = employee.id_funcionario
     tdNome.innerHTML = employee.nome
     tdEmail.innerHTML = employee.email
     tdId_emp.innerHTML = employee.id_empresa
-    tdAction.innerHTML = `<div class="field-acoes"><button type="button" id="edit" value="${employee.id_funcionario}" class="btn-table bt-blue">Editar</button><button type="button" value="${employee.id_funcionario}" id="delete" class="btn-table bt-red">Delete</button></div>`
 
     row.appendChild(tdId_func)
     row.appendChild(tdNome)
     row.appendChild(tdEmail)
     row.appendChild(tdId_emp)
-    row.appendChild(tdAction)
     return row
 }
 
 
 //Faz requisição GET para pegar os dados da database
 function doGet(){
-        fetch('http://localhost/teste/API-Rest-PHP-Errado/app/views/read.php')
+        fetch('http://localhost/API-Rest-PHP/app/views/read.php')
             .then(response => response.json())
                .then(data => {
                     data.forEach(element => {
@@ -73,7 +70,7 @@ function takeResults(){
 function doPost(obj){
 
 
-    fetch('http://localhost/teste/API-Rest-PHP-Errado/app/views/create.php',{ method: "Post", body: obj })
+    fetch('http://localhost/API-Rest-PHP/app/views/create.php',{ method: "Post", body: obj })
         .then(response => response.json())
             .then(json => console.log(json))
 }
