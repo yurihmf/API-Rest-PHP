@@ -11,14 +11,6 @@ Aceito ideias e sugestões do que melhorar no código ou do que tenho estudar pa
 
 ### Tasks 📝
 
-- Criar a função de Update no front-end.
-
-- Criar a função de Delete no no front-end.
-
-- Melhorar o retorno da função de cadastro.
-
-- Descobrir do porque o css quebrar ao adicionar dados na tabela via JavaScript.
-
 - Melhorar Layout e deixar responsivo.
 
 - Adicionar validação para formulário.
