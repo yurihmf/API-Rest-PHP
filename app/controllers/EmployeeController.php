@@ -1,36 +1,36 @@
 <?php
-include '../models/Employee.php';
+namespace App\Controllers;
+
+use App\Models\Employee;
 
 class EmployeeController
 {
-    public function insert($obj)
+    public function post()
     {
         $employee = new Employee();
-
-        return $employee->insert($obj);
-        header('Location:read.php');
+        print_r($_POST);
+        return $employee->insert($_POST);
     }
 
-    public function update($obj, $id)
+    public function put($id)
     {
         $employee = new Employee();
-        return $employee->update($obj, $id);
+        return $employee->update($_PUT, $id);
     }
 
-    public function delete($obj, $id)
+    public function delete($id)
     {
         $employee = new Employee();
-        return $employee->delete($obj, $id);
+        return $employee->delete($id);
     }
 
-    public function find($id = null)
-    {
-
-    }
-
-    public function findAll()
+    public function get($id = null)
     {
         $employee = new Employee();
-        return $employee->findAll();
+        if ($id) {
+            return $employee->find($id);
+        } else {
+            return $employee->findAll();
+        }
     }
 }

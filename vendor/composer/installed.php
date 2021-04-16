@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'a7060884d93943f50cfdef5ed3fe1a0a90a74bb4',
+    'reference' => '061d8c7b462e97190e4a295dcfddca21bcbf8a6f',
     'name' => 'passivo/composer-php',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'a7060884d93943f50cfdef5ed3fe1a0a90a74bb4',
+      'reference' => '061d8c7b462e97190e4a295dcfddca21bcbf8a6f',
     ),
   ),
 );

@@ -22,23 +22,26 @@ main {
 }
 
 .container {
-  width: 80%;
-  height: 70vh;
+  width: 70%;
+  height: 100vh;
 
   padding: 25px;
 
   background-color: white;
 
   font-family: "Nunito", sans-serif;
-
-  border-radius: 50px;
-
-  display: flex;
 }
 
-.singup {
-  width: 50%;
-  border-right: 1px solid rgb(150, 150, 150);
+.buttons {
+  width: 100%;
+}
+
+.buttons a {
+  text-decoration: none;
+  background: #4caf50;
+  color: #fff;
+  width: 20%;
+  padding: 10px;
 }
 
 .singup h1 {
@@ -64,10 +67,11 @@ main {
 }
 
 .input-field {
+  font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
 
-  width: 70%;
+  width: 100%;
 }
 
 .input-field label {
@@ -94,12 +98,14 @@ main {
 
 .btn-field {
   display: flex;
-  width: 70%;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 
 .btn-green {
   cursor: pointer;
-  width: 30%;
+  width: 40%;
   height: 35px;
   background: #4caf50;
   border: 0;
@@ -108,12 +114,12 @@ main {
   transition: background 0.2s;
 }
 
-.btn-green button:hover {
+.btn-green button:hover,
+.buttons a:hover {
   background: #66bb6a;
 }
 
 .list {
-  width: 50%;
   padding-left: 25px;
 }
 
@@ -125,6 +131,7 @@ main {
   margin-top: 10px;
   width: 100%;
   border-collapse: collapse;
+  text-align: center;
 }
 
 .table thead {
@@ -132,11 +139,6 @@ main {
   color: white;
 
   width: 100%;
-}
-
-tr {
-  display: flex;
-  justify-content: space-between;
 }
 
 tr:nth-child(2n + 2) {
@@ -151,18 +153,11 @@ td {
 
 .field-acoes {
   display: flex;
-  margin-bottom: 15px;
-}
-
-.field-acoes > .input-field{
-  width: 50%;
-  flex-direction: row;
-  padding: 10px;
 }
 
 .btn-acoes {
   cursor: pointer;
-  width: 30%;
+  width: 50px;
   border: 0;
   color: white;
   padding: 5px;
@@ -175,8 +170,4 @@ td {
 
 .bt-blue {
   background-color: #2196f3;
-}
-
-.field-acoes > .input-field input{
-  width: 70%;
 }
