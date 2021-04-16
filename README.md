@@ -8,13 +8,35 @@ Caso queria rodar o projeto, não se esqueça de trocar a url do fetch para o da
 Aceito ideias e sugestões do que melhorar no código ou do que tenho estudar para melhorar.
 
 ---
+### Endpoints
 
-### Tasks 📝
+#### *Empresas*
 
-- Melhorar Layout e deixar responsivo.
+**GET** - api/company
 
-- Adicionar validação para formulário.
+**GET** - api/company/{id}
 
-- Adicionar o cadastro de funcionários e listar eles junto com as empresas.
+**POST** - api/company
 
-- Ter ideias de funções novas.
+**POST** - api/company/{id}(Utilizado para fazer update)
+
+**DELETE** - api/company/{id}
+
+#### *Funcionários*
+**GET** - api/employee
+
+**GET** - api/employee/{id}
+
+**POST** - api/employee
+
+**POST** - api/employee/{id}(Utilizado para fazer update)
+
+**DELETE** - api/employee/{id}
+
+
+## Tasks 📝
+
+- [ ] Criar uma consulta que mostre a empresa e seus respectivos funcionários.
+- [ ] Substituir a requisição de update para **PUT**.
+- [ ] Melhorar o código para deixar mais limpo.
+
