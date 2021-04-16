@@ -8,7 +8,7 @@ class Company extends Connection
 {
     private static $table = 'empresas';
 
-    public static function select($id_empresa)
+    public function find($id_empresa)
     {
         $sql = 'SELECT * FROM ' . self::$table . ' WHERE id_empresa = :id_empresa';
         $stmt = Connection::prepare($sql);
@@ -22,7 +22,7 @@ class Company extends Connection
         }
     }
 
-    public static function selectAll()
+    public function findAll()
     {
         $sql = 'SELECT * FROM ' . self::$table;
         $stmt = Connection::prepare($sql);
@@ -35,7 +35,7 @@ class Company extends Connection
         }
     }
 
-    public static function insert($data)
+    public function insert($data)
     {
         $sql = 'INSERT INTO ' . self::$table . ' (nome_empresa, cnpj, site) VALUES (:nm, :cn, :st)';
         $stmt = Connection::prepare($sql);
@@ -51,7 +51,7 @@ class Company extends Connection
         }
     }
 
-    public static function update($id_empresa, $data)
+    public function update($id_empresa, $data)
     {
         $sql = 'UPDATE ' . self::$table . ' SET nome_empresa = :nm, cnpj = :cn, site = :st WHERE id_empresa = :id';
         $stmt = Connection::prepare($sql);
@@ -68,7 +68,7 @@ class Company extends Connection
         }
     }
 
-    public static function delete($id)
+    public function delete($id)
     {
         $sql = 'DELETE FROM ' . self::$table . ' WHERE id_empresa = :id';
         $stmt = Connection::prepare($sql);
