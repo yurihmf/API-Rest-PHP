@@ -4,7 +4,7 @@
             "App\\": "app/"
         },
         "files": [
-            "config.php"
+            "app/Connection/config.php"
         ]
     },
     "name": "passivo/composer-php",

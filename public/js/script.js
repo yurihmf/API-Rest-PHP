@@ -1,48 +1,43 @@
-//Escutando click dos botões
-var btn_read = document.getElementById('bt-read')
-var btn_post = document.getElementById('bt-post')
-//var btn_update = document.getElementById('edit')
-//var btn_delete = document.getElementById('delete')
-btn_read.addEventListener('click', doGet)
-btn_post.addEventListener('click', takeResults)
-//btn_update.addEventListener('click', doUpdate)
-//btn_delete.addEventListener('click', doDelete)
-
+$("#table").ready(()=>{
+    doGetCompany()
+})
 
 //Tabela
 table = document.getElementById('table')
 
 //Cria uma linha com conteúdo para a tabela
-function createRow(employee){
+function createRow(company){
     let row = document.createElement("tr")
-    let tdId_func = document.createElement("td")
-    let tdNome = document.createElement("td")
-    let tdEmail = document.createElement("td")
     let tdId_emp = document.createElement("td")
+    let tdNome = document.createElement("td")
+    let tdCnpj = document.createElement("td")
+    let tdSite = document.createElement("td")
+    let tdAcao = document.createElement("td")
 
-    tdId_func.innerHTML = employee.id_funcionario
-    tdNome.innerHTML = employee.nome
-    tdEmail.innerHTML = employee.email
-    tdId_emp.innerHTML = employee.id_empresa
+    tdId_emp.innerHTML = company.id_empresa
+    tdNome.innerHTML = company.nome_empresa
+    tdCnpj.innerHTML = company.cnpj
+    tdSite.innerHTML = company.site
+    tdAcao.innerHTML = `<div class="field-acoes"><a href="update-company.html?id_empresa=${company.id_empresa}" class="btn-acoes bt-blue">Editar</a><button type="button" value="${company.id_empresa}" onclick="doDeleteCompany(this.value)" class="btn-acoes bt-red">Deletar</button></div>`
 
-    row.appendChild(tdId_func)
-    row.appendChild(tdNome)
-    row.appendChild(tdEmail)
     row.appendChild(tdId_emp)
+    row.appendChild(tdNome)
+    row.appendChild(tdCnpj)
+    row.appendChild(tdSite)
+    row.appendChild(tdAcao)
     return row
 }
 
 
 //Faz requisição GET para pegar os dados da database
-function doGet(){
-        fetch('http://localhost/API-Rest-PHP/app/views/read.php')
+function doGetCompany(){
+        fetch('http://localhost/projetos/API-Rest-PHP/public/api/company')
             .then(response => response.json())
                .then(data => {
-                    data.forEach(element => {
+                    data.data.forEach(element => {
                         let row = createRow(element)
                         table.appendChild(row)
                     })
-                    $('#bt-read').hide();
                 })
                     .catch(error => {
                         console.log('ERROR: ' + error.message);
@@ -50,38 +45,98 @@ function doGet(){
 
 }
 
-//Pega os values do formulário
-function takeResults(){
-    let nome = $('#nome').val()
-    let email = $('#email').val()
-    let id_empresa = $('#id_empresa').val()
+function doGetEmployee(){
+        fetch('http://localhost/projetos/API-Rest-PHP/public/api/employee')
+            .then(response => response.json())
+               .then(data => {
+                    data.data.forEach(element => {
+                        let row = createRow(element)
+                        table.appendChild(row)
+                    })
+                })
+                    .catch(error => {
+                        console.log('ERROR: ' + error.message);
+                    });
 
-    let values = {  nome: nome,
-                    email:email,
-                    id_empresa:id_empresa
-                }
-
-    let obj = JSON.stringify(values)
-
-    doPost(obj)
 }
 
 //Faz requisição POST para inserir dados na database
-function doPost(obj){
-
-
-    fetch('http://localhost/API-Rest-PHP/app/views/create.php',{ method: "Post", body: obj })
+function doPostEmployee(){
+    let obj = new FormData($("form[name='form-employee'")[0])
+    fetch('http://localhost/projetos/API-Rest-PHP/public/api/employee',{ method: "Post", body: obj })
         .then(response => response.json())
             .then(json => console.log(json))
 }
 
+function doPostCompany(){
+    let obj = new FormData($("form[name='form-company'")[0])
+    fetch('http://localhost/projetos/API-Rest-PHP/public/api/company',{ method: "Post", body: obj })
+        .then(response => response.json())
+            .then(json => console.log(json))
+
+    document.location.reload(true)
+}
+
 //Faz requisição para dar update
-function doUpdate(){
-    let sla = $('#edit').val()
-    console.log(sla)
+function doUpdateEmployee(){
+    alert("teste")
+}
+
+function doUpdateCompany(){
+    var formdata = new FormData($("form[name='form-company-update'")[0]);
+
+    let query = location.search.slice(1);
+    let partes = query.split('&');
+    let chave = partes[0].split('=')
+    let valor = chave[1];
+
+    var requestOptions = {
+    method: 'PUT',
+    body: formdata,
+    redirect: 'follow'
+    };
+
+    fetch(`http://localhost/projetos/API-Rest-PHP/public/api/company/${valor}`, requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
+    alert("Empresa atualizada com sucesso!")
+
+    window.location.href = "http://localhost/projetos/API-Rest-PHP/public/index.html"
 }
 
 //Faz requisição para deletar
-function doDelete(){
+function doDeleteEmployee(id){
+    var formdata = new FormData();
 
+    var requestOptions = {
+    method: 'DELETE',
+    body: formdata,
+    redirect: 'follow'
+    };
+
+    fetch(`http://localhost/projetos/API-Rest-PHP/public/api/employee/${id}`, requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
+    document.location.reload(true)
+}
+
+function doDeleteCompany(id){
+    var formdata = new FormData();
+
+    var requestOptions = {
+    method: 'DELETE',
+    body: formdata,
+    redirect: 'follow'
+    };
+
+    fetch(`http://localhost/projetos/API-Rest-PHP/public/api/company/${id}`, requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
+    document.location.reload(true)
 }
