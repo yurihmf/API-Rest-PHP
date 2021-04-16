@@ -5,18 +5,21 @@ use App\Models\Employee;
 
 class EmployeeController
 {
-    public function post()
+    public function post($id = null)
     {
         $employee = new Employee();
-        print_r($_POST);
-        return $employee->insert($_POST);
+        if ($id) {
+            return $employee->update($_POST, $id);
+        } else {
+            return $employee->insert($_POST);
+        }
     }
 
-    public function put($id)
-    {
-        $employee = new Employee();
-        return $employee->update($_PUT, $id);
-    }
+    // public function put($id)
+    // {
+    //     $employee = new Employee();
+    //     return $employee->update($_PUT, $id);
+    // }
 
     public function delete($id)
     {
